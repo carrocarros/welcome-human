@@ -10,17 +10,61 @@
             <h1><em>welcome, human...</em></h1>
             <p>how're you liking it so far?</p>
         </div>
+        <main class = "flex-container">
+                    <div>
+                        <img src="images/waving.png" alt="wave picture">  
+                    </div>
+                    <div class="info accordion">
+                        <details>
+                            <summary>ABOUT ME</summary>
+                            <div class="content">
+                                <p>Hey, it's Frank!</p>
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            </div>
+                        </details>
 
-        <div class = "info">
-            <h2 >ABOUT ME</h2>
-            <p>Hey, it's Frank!</p>
-            <h2 >SKILLS</h2>
-            <p>I am program</p>
-            <h2 >PROJECTS</h2>
-            <p>Syllabook...</p>
-            <h2 >CONTACT</h2>
-            <p>Call me idk</p>
-        </div>
-        <img src="images/waving.png" alt="wave picture">
+                        <details>
+                            <summary>SKILLS</summary>
+                            <div class="content">
+                                <p>I am program</p>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            </div>
+                        </details>
+
+                        <details>
+                            <summary>PROJECTS</summary>
+                            <div class="content">
+                                <p>Syllabook...</p>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            </div>
+                        </details>
+
+                        <details>
+                            <summary>CONTACT</summary>
+                            <div class="content">
+                                <p>Call me idk</p>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            </div>
+                            
+                        </details>
+                </div>
+        </main>
+
+        <script>
+            const details = document.querySelectorAll("details");
+
+            details.forEach((target) => {
+                target.addEventListener("toggle", () => {
+                if (target.open) {
+                    details.forEach((other) => {
+                    if (other !== target) {
+                        other.removeAttribute("open");
+                    }
+                    });
+                }
+                });
+            });
+        </script>
+        
     </body>
 </html>

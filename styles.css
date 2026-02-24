@@ -21,17 +21,114 @@ p {
     text-align: left;
 }
 
-h2, p {
+h2, p{
   color: black;
-  width: 75%;
+  width: auto;
 }
+
 
 .info {
   width: 80%;
   background-color: burlywood;
   margin-left: auto;
-  margin-right: 0;
+  margin-right: auto;
   padding: 20px;
-  max-width: 600px;
   font-size: 16px;
+  flex: 1;          
+  max-width: none;
+}
+
+.flex-container{
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+details {
+  background-color: burlywood;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+summary {
+  color: black;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  list-style: none;
+}
+
+details p {
+  color: black;
+}
+
+details > *:not(summary) {
+  overflow: hidden;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+details:not([open]) > *:not(summary) {
+  opacity: 0;
+  transform: translateY(-12px);
+}
+
+details[open] > *:not(summary) {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.accordion details {
+  background-color: burlywood;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+  padding: 0;
+}
+
+.accordion details:last-child {
+  border-bottom: none;
+}
+
+.accordion summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 18px 16px;
+  font-size: 22px;
+  font-weight: bold;
+  color: black;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.accordion summary::-webkit-details-marker {
+  display: none;
+}
+
+.accordion summary::after {
+  content: "▼";
+  font-size: 18px;
+  transition: transform 0.3s ease;
+}
+
+.accordion details[open] summary::after {
+  transform: rotate(180deg);
+}
+
+.accordion-content {
+  padding: 0 16px 16px 16px;
+}
+
+details > .accordion-content {
+  overflow: hidden;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+details:not([open]) > .accordion-content {
+  opacity: 0;
+  transform: translateY(-8px);
+}
+
+details[open] > .accordion-content {
+  opacity: 1;
+  transform: translateY(0);
 }
