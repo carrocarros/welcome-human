@@ -11,7 +11,7 @@
             <p>how're you liking it so far?</p>
         </div>
         <main class = "flex-container">
-                    <div>
+                    <div class="side-picture">
                         <img src="images/waving.png" alt="wave picture">  
                     </div>
                     <div class="info accordion">
@@ -51,6 +51,7 @@
         </main>
 
         <script>
+            <!-- iff one opens, the other already opened one closes :) -->
             const details = document.querySelectorAll("details");
 
             details.forEach((target) => {
